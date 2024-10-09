@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coding assignment 1.4</title>
+</head>
+<body>
+   
+    <script>
+        function hello() {
+            var hi = document.createElement('div');
+            hi.style.top = '100px';
+            hi.style.left = '100px';
+            hi.style.width = '50px';
+            hi.style.height = '50px';
+            hi.style.background = "red";
+            hi.style.borderRadius = '50%';
+            hi.style.position = 'absolute';
+            document.body.appendChild(hi);
+            return hi;
+        }
+
+        let time=500;
+        let pos=0;
+        let vel=100;
+        let ball=hello()
+
+        function move(){
+        pos=pos+vel
+       if(pos > 500 -50 || pos < 50){
+           vel=-vel;
+     }
+         ball.style.top=pos+'px'
+         ball.style.left=pos+'px'
+    }
+      setInterval(move,time)
+    </script>
+</body>
+</html>
